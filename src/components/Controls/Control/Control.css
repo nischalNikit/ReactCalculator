@@ -1,0 +1,27 @@
+.Control {
+    width: 33.33%;
+    height: 20%;
+    
+    padding: 1.5rem 2.75rem;
+
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--color-black);
+    background-color: var(--color-grey-light);
+
+    border: 1px solid var(--color-grey-dark);
+    border-left: none;
+    border-bottom: none;
+
+    transition: all .3s;
+}
+
+
+.Control:hover{
+    background-color: var(--color-grey-dark);
+    color: var(--color-white);
+}
+
+.Control:active{
+    transform: scale(0.8);
+}

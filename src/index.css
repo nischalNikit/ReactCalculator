@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-yellow:#F9C938;
+  --color-orange:  #ff9900;
+
+  --color-grey-light: #ccc;
+  --color-grey-dark:#777;
+
+  --color-black: #000;
+  --color-white: #fff;
+
+  --bp-desktop: 1200px;
+  --bp-tablet-land: 900px;
+  --bp-tablet-port: 600px;
+  --bp-mobile: 400px;
+}
+
+html{
+  font-size: 62.5%;
+  font-weight: 400;
+  font-family: 'Roboto', 'sans-serif';
+}
+
+@media(max-width: 1200px){
+  html{
+    font-size: 55%;
+  }
+}
+
+@media(max-width: 900px){
+  html{
+    font-size: 52.5%;
+  }
+}
+
+@media(max-width: 600px){
+  html{
+    font-size: 50%;
+  }
+}
+
+@media(max-width: 400px){
+  html{
+    font-size: 47.5%;
+  }
+}
+
+@media(max-width: 300px){
+  html{
+    font-size: 45%;
+  }
+}
+
+
+body {
+  height: 100vh;
+  background-image: 
+  linear-gradient(to right, var(--color-yellow) 40%, var(--color-orange));
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  position: relative;
+}

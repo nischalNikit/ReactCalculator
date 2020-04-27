@@ -1,0 +1,27 @@
+.Operator {
+    width: 100%;
+    height: 20%;
+
+    padding: 1.5rem 3.5rem;
+
+    font-size: 2.5rem;
+    font-weight: 500;
+
+    color: var(--color-white);
+    background-color: var(--color-orange);
+
+    border-top: 1px solid var(--color-grey-dark);
+
+    transition: all .3s;
+}
+
+.Operator:hover{
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    border: none;
+}
+
+.Operator:active{
+    transform: scale(0.8);
+    border: none;
+}
