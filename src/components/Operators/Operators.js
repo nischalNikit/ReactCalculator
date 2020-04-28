@@ -6,11 +6,30 @@ import Operator from './Operator/Operator';
 const operators = props => {
     return(
         <div className = {classes.Operators}>
-            <Operator OperatorValue = "/" />
-            <Operator OperatorValue = "X" />
-            <Operator OperatorValue = "-" />
-            <Operator OperatorValue = "+" />
-            <Operator OperatorValue = "=" />
+            <Operator  
+                changeOperator = {() => props.inputOperator("/")} 
+                changeInput    = {() => props.inputValue("/")} 
+                OperatorValue  = "/" 
+            />
+            <Operator  
+                changeOperator = {() => props.inputOperator("*")}
+                changeInput    = {() => props.inputValue("*")} 
+                OperatorValue  = "*" 
+            />
+            <Operator  
+                changeOperator = {() => props.inputOperator("-")}
+                changeInput    = {() => props.inputValue("-")} 
+                OperatorValue  = "-" 
+            />
+            <Operator  
+                changeOperator = {() => props.inputOperator("+")}
+                changeInput    = {() => props.inputValue("+")} 
+                OperatorValue  = "+" 
+            />
+            <Operator  
+                calculate     = {() => props.inputOperator("%")}
+                OperatorValue = "%" 
+            />
         </div>
     )
 }
