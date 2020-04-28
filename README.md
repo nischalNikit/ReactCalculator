@@ -1,7 +1,5 @@
 # ReactCalculator
 A React-based calculator that performs all the basic arithmetic operations and is designed to work on all different devices.
-<h1>React Calculator</h1>
-
 A React Application. This is a React-based calculator which uses React at its core to function like a normal basic calculator.
 
 Technologies Used :- 
