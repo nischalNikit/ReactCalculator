@@ -7,7 +7,6 @@ import Operators from '../components/Operators/Operators';
 import Auxiliary from '../hoc/Auxiliary';
 
 class Calculator extends Component {
-
     state = {
         inputValue : "",
         operator: null,
@@ -36,30 +35,23 @@ class Calculator extends Component {
         if(!this.state.operator){
             let firstNumber = parseFloat(this.state.inputValue, 10);
             let newCollection = [...this.state.collection, firstNumber];
-
             this.setState({operator: operator, collection: newCollection, inputValue: ""});
-        }
-
-        else{
+        }else{
             let secondNumber = parseFloat(this.state.inputValue, 10);
             let result = this.calculation(this.state.collection[0], this.state.operator, secondNumber);
             let newCollection = [parseFloat(result,10)];
-
             this.setState({operator: operator, collection: newCollection, inputValue: ""})
         }
     }
 
     calculateHandler = () => {
         let secondNumber = parseFloat(this.state.inputValue, 10);
-        let newCollection = [...this.state.collection, secondNumber];
         let result = this.calculation(this.state.collection[0], this.state.operator, secondNumber);
-
-        this.setState({inputValue : result, collection: newCollection});
+        this.setState({inputValue : result, collection: [], operator : null});
     }
 
     calculation = (firstNumber, operator, secondNumber) => {
         let resultant = null;
-
         switch(operator){
             case '+':
                 resultant = firstNumber + secondNumber;
@@ -99,7 +91,6 @@ class Calculator extends Component {
                         calculate   = {this.calculateHandler}
                     />
                     <Operators 
-                        inputValue    = {this.changeInputValueHandler}
                         inputOperator = {this.OperatorHandler}
                     />
                 </div>

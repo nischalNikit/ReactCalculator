@@ -1,37 +1,29 @@
-import React from 'react';
+import React, {Component} from 'react';
 import classes from './Operators.css';
 
 import Operator from './Operator/Operator';
 
-const operators = props => {
+class Operators extends Component{
+
+    state = {
+        operators: ['/','*','-','+','%']
+    }
+
+    render(){
+
+    let OperatorDiv = this.state.operators.map((element) => {
+        return(
+        <Operator 
+            changeOperator = {() => this.props.inputOperator(element)} 
+            OperatorValue  = {element}
+        />);    
+    })
+
     return(
         <div className = {classes.Operators}>
-            <Operator  
-                changeOperator = {() => props.inputOperator("/")} 
-                changeInput    = {() => props.inputValue("/")} 
-                OperatorValue  = "/" 
-            />
-            <Operator  
-                changeOperator = {() => props.inputOperator("*")}
-                changeInput    = {() => props.inputValue("*")} 
-                OperatorValue  = "*" 
-            />
-            <Operator  
-                changeOperator = {() => props.inputOperator("-")}
-                changeInput    = {() => props.inputValue("-")} 
-                OperatorValue  = "-" 
-            />
-            <Operator  
-                changeOperator = {() => props.inputOperator("+")}
-                changeInput    = {() => props.inputValue("+")} 
-                OperatorValue  = "+" 
-            />
-            <Operator  
-                calculate     = {() => props.inputOperator("%")}
-                OperatorValue = "%" 
-            />
+           {OperatorDiv}
         </div>
-    )
+    )}
 }
 
-export default operators;
+export default Operators;

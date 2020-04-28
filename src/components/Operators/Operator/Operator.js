@@ -2,16 +2,8 @@ import React from 'react';
 import classes from './Operator.css';
 
 const operator = props => {
-    
-    let clickMethods = null;
-    if(props.changeOperator){
-        clickMethods = props.changeOperator;
-    }else if(props.calculate){
-        clickMethods = props.calculate;
-    }
-    
     return (
-        <div className = {classes.Operator} onClick = {clickMethods}>
+        <div className = {classes.Operator} onClick = {props.changeOperator}>
             {props.OperatorValue}
         </div>
     )
